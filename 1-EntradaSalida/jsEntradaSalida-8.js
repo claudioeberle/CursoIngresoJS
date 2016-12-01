@@ -5,4 +5,11 @@ ej.: "El resto es 0 ."*/
 function SacarResto()
 {
 	
+var resto;
+
+numeroDividendo= document.getElementById('numeroDividendo').value;
+numeroDivisor= document.getElementById('numeroDivisor').value;
+resto= numeroDividendo%numeroDivisor;
+
+alert(resto);
 }
