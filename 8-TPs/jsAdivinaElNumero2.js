@@ -19,7 +19,7 @@ function comenzar()
 		//alert(numeroSecreto );
 
 	contadorIntentos=0;
-	numeroSecreto= Math.floor((Math.random() * 100) + 1);
+	numeroSecreto= Math.floor((Math.random() * 10) + 1);
 	
 
 }
@@ -38,31 +38,27 @@ function verificar()
 
 			alert("¡GANO!");
 			//APTITUDES
+						
+			switch(contadorIntentos) {
+
+				case 5: alert("Usted está en la media");
+						break;
+				case 4: alert("Excelente técnica");
+						break;
+				case 3: alert("Esto es suerte");
+						break;
+				case 2: alert("Excelente percepción");
+						break;
+				case 1: alert("Usted es un psíquico");		
+						break;
+			}
+			if(contadorIntentos>5 && contadorIntentos<11){
+				alert("Falta técnica");
+			}// e 6 y 10
+
 			if (contadorIntentos>10){ 
 				alert("¡Afortunado en el amor!");
 			} //>10
-			if (contadorIntentos<10 && contadorIntentos>5) {
-				alert("Falta técnica");
-			}// 6-10
-			if (contadorIntentos==5) {
-				alert("Usted está en la media");
-			}// ==5
-			
-			if (contadorIntentos==4) {
-				alert("Excelente técnica");
-			}// ==4
-			
-			if (contadorIntentos==3) {
-				alert("Esto es suerte");
-			}// ==3
-			
-			if (contadorIntentos==2) {
-				alert("Excelente percepción");
-			}// ==2
-			
-			if (contadorIntentos==1) {
-				alert("Usted es un psíquico");
-			}// ==1
 			
 		}//IF GANO
 

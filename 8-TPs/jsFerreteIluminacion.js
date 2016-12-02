@@ -31,41 +31,40 @@ function CalcularPrecio ()
 
 	}//if >5
 
-	if (cantidad==5) {
+	switch (cantidad){
 
-		if (marca=="ArgentinaLuz") {
+		case 5:
+			if (marca=="ArgentinaLuz") {
 
 			precioFinal=precioBruto*0.6;
 
-		}//if argentinaluz
-		else{
+			}//if argentinaluz
+			else{
 
 				precioFinal=precioBruto*0.7;
 			}// else 
-	}//if ==5
+		break;
 
-	if (cantidad==4) {
-
-		if (marca=="ArgentinaLuz" || marca=="FelipeLamparas") {
+		case "4":
+			if (marca=="ArgentinaLuz" || marca=="FelipeLamparas") {
 
 			precioFinal=precioBruto*0.75;
-		}// if 0.75
-		else {
+			}// if 0.75
+			else {
 
 				precioFinal=precioBruto*0.8;
 
-		}//else
+			}//else
+		break;
 
-	}// if 4
-
-	if (cantidad==3) {
-
-		if (marca=="ArgentinaLuz") {
+		case "3":
+			if (marca=="ArgentinaLuz") {
 
 			precioFinal=precioBruto*0.85;
 
-		}// if argentinaluz
-		else{
+			}// if argentinaluz
+			else{
+
 				if(marca=="FelipeLamparas") {
 
 					precioFinal=precioBruto*0.90;
@@ -76,9 +75,11 @@ function CalcularPrecio ()
 					precioFinal=precioBruto*0.95;
 
 				} // else
-		}//else
-	}//if 3
+			}//else
+		break;
 
+	}
+	
 	if (precioFinal>120) {
 
 			var impuesto=precioFinal*0.10;
