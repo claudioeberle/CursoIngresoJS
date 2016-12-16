@@ -1,6 +1,6 @@
 function Mostrar()
 {
-
+/*
 var interaccion=0;
 var numeroRandom;
 var cont1=0;
@@ -109,5 +109,88 @@ while (interaccion<1000000)
 	console.log("El total es : "+total);
 	console.log(contPar+" números pares");
 	console.log(contImpar+" números Impares");
+*/
+
+
+
+/*7- realizar el algoritmo que permita el ingreso por prompt de las notas (validar entre 0 y 10) y el sexo
+(validar el sexo “f” o “m”) de 100 alumnos, informar por alert:
+a) el promedio de las notas totales.
+b) la nota más baja.
+c) la cantidad de varones que su nota haya sido mayor o igual a 6.*/
+	
+	var nota;
+	var sexo;
+	var alumnos=5;
+	var acumulador=0;
+	var promedio;
+	var minimo;
+	var varones=0;
+
+	while(alumnos>0){
+
+		nota=prompt("Ingrese nota");
+		nota=parseInt(nota);
+
+		while(nota<0||nota>10){
+
+			alert("Los valores deben comprenderse entre 0 y 10");
+			nota=prompt("Re-ingrese nota");
+			nota=parseInt(nota);
+
+
+		
+		}//while2
+
+		
+		sexo=prompt("Ingrese sexo");
+
+		while(sexo!="f" && sexo!="m"){
+
+
+			alert("ERROR. Escribir f para femenino y m para masculino");
+			sexo=prompt("Re-ingrese sexo");
+
+		}//while3
+
+		console.log(nota+sexo);
+
+		
+		//promedio
+		acumulador=acumulador+nota; 
+
+
+		//minimo
+		if(alumnos==5){
+
+			minimo=nota;
+
+		}else{
+
+			if(nota<minimo){
+
+				minimo=nota;
+			}
+		}
+
+		//varones >=6
+		if(sexo=="m" && nota>=6){
+
+			varones++;
+		}
+
+	alumnos--;
+
+	}//while1
+
+	promedio=acumulador/5;
+
+	console.log("Nota minima: "+minimo);
+	console.log("La nota promedio es: "+promedio);
+	console.log("Los mayores con 6 o más: "+varones);
+
+
+
+
 
 }//FIN DE LA FUNCIÓN
